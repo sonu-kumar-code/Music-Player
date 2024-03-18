@@ -1,0 +1,68 @@
+[versions]
+agp = "8.3.0"
+kotlin = "1.9.20"
+coreKtx = "1.10.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.7.0"
+composeBom = "2023.08.00"
+
+composeVersion = '1.0.1'
+lifecycleCompose = '2.4.0'
+#roomVersion = "2.2.6"
+hiltVersion = "2.50"
+#retrofitVersion = "2.9.0"
+#exoPlayerVersion = "2.14.1"
+#glideVersion = "4.12.0"
+#accompanistVersion = '0.12.0'
+kotlinCoroutinesVersion = '1.5.0'
+androidxCore = '1.7.0'
+androidxMedia = '1.5.0'
+exoplayer = '2.17.0'
+extensionMediasession = '2.17.0'
+hiltLifecycle = '1.0.0-alpha03'
+androidxHiltCompiler = '1.0.0'
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+lifecycle-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleCompose" }
+material-icon-compose = { module = "androidx.compose.material:material-icons-extended", version.ref = "composeVersion" }
+androidx-core = { module = "androidx.core:core", version.ref = "androidxCore" }
+androidx-media = { module = "androidx.media:media", version.ref = "androidxMedia" }
+exoplayer = { module = "com.google.android.exoplayer:exoplayer", version.ref = "exoplayer" }
+extension-mediasession = { module = "com.google.android.exoplayer:extension-mediasession", version.ref = "extensionMediasession" }
+android-hilt = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
+compiler-hilt = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltVersion" }
+lifecycle-hilt = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "hiltLifecycle" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidxHiltCompiler" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutinesVersion" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutinesVersion" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidHilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+
+[bundles]
+compose = [
+    "androidx-ui",
+    "androidx-ui-graphics",
+    "androidx-ui-tooling-preview",
+    "androidx-material3"
+]
+

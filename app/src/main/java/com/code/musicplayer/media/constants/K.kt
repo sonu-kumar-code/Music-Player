@@ -1,0 +1,11 @@
+package com.code.musicplayer.media.constants
+
+object K {
+
+    const val PLAYBACK_NOTIFICATION_CHANEL_ID = "SFSF"
+    const val PLAYBACK_NOTIFICATION_ID = 12314141
+    const val MEDIA_ROOT_ID = "SFSF"
+    const val START_MEDIA_PLAY_ACTION = "START_MEDIA_PLAY_ACTION"
+    const val REFRESH_NOTIFICATION_CHANEL_ID = "REFRESH_NOTIFICATION_CHANEL_ID"
+    const val PLAYBACK_UPDATE_INTERVAL = 1000L
+}
