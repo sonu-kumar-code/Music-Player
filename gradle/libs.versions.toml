@@ -16,7 +16,7 @@ hiltVersion = "2.50"
 #retrofitVersion = "2.9.0"
 #exoPlayerVersion = "2.14.1"
 #glideVersion = "4.12.0"
-#accompanistVersion = '0.12.0'
+accompanistVersion = '0.12.0'
 kotlinCoroutinesVersion = '1.5.0'
 androidxCore = '1.7.0'
 androidxMedia = '1.5.0'
@@ -52,6 +52,7 @@ lifecycle-hilt = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.re
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "androidxHiltCompiler" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutinesVersion" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinCoroutinesVersion" }
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

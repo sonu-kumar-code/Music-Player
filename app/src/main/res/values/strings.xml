@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MusicPlayer</string>
+    <string name="notification_channel">Notification Channel</string>
+    <string name="notification_channel_description">Notification Channel Description</string>
+    <string name="generic_error">generic error</string>
+    <string name="error_media_not_found">error media not found</string>
 </resources>
