@@ -38,7 +38,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -104,8 +103,7 @@ private val dummyAudioList = listOf(
         duration = 234567,
         title = "Android Programming"
     ),
-
-    )
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -119,9 +117,7 @@ fun HomeScreen(
     onItemClick: (Audio) -> Unit,
     onNext: () -> Unit
 ) {
-    val scaffoldState = rememberBottomSheetScaffoldState(
-
-    )
+    val scaffoldState = rememberBottomSheetScaffoldState()
 
     val animatedHeight by animateDpAsState(
         targetValue = if (currentPlayingAudio == null) 0.dp
@@ -139,7 +135,6 @@ fun HomeScreen(
                     onStart = { onStart.invoke(currentPlayingAudio) },
                     onNext = { onNext.invoke() }
                 )
-
             }
         },
         scaffoldState = scaffoldState,
@@ -151,14 +146,11 @@ fun HomeScreen(
             items(audioList) { audio: Audio ->
                 AudioItem(
                     audio = audio,
-                    onItemClick = { onItemClick.invoke(audio)},
+                    onItemClick = { onItemClick.invoke(audio) },
                 )
             }
         }
-
     }
-
-
 }
 
 @Composable
@@ -196,24 +188,19 @@ fun AudioItem(
                     overflow = TextOverflow.Clip,
                     color = Color.Gray
                 )
-
             }
             Text(text = timeStampToDuration(audio.duration.toLong()))
             Spacer(modifier = Modifier.size(8.dp))
         }
-
     }
-
-
 }
 
-private fun timeStampToDuration(position:Long):String{
+private fun timeStampToDuration(position: Long): String {
     val totalSeconds = floor(position / 1E3).toInt()
     val minutes = totalSeconds / 60
     val remainingSeconds = totalSeconds - (minutes * 60)
-
     return if (position < 0) "--:--"
-    else "%d:%02d".format(minutes,remainingSeconds)
+    else "%d:%02d".format(minutes, remainingSeconds)
 }
 
 
@@ -280,10 +267,7 @@ fun MediaPlayerController(
             }
         )
     }
-
-
 }
-
 
 @Composable
 fun ArtistInfo(
@@ -324,24 +308,18 @@ fun ArtistInfo(
                 fontSize = 15.sp
             )
         }
-
-
     }
-
-
 }
-
 
 @Composable
 fun PlayerIconItem(
     modifier: Modifier = Modifier,
     icon: ImageVector,
     border: BorderStroke? = null,
-    backgroundColor: androidx.compose.ui.graphics.Color = MaterialTheme.colorScheme.surface,
-    color: androidx.compose.ui.graphics.Color = MaterialTheme.colorScheme.onSurface,
+    backgroundColor: Color = MaterialTheme.colorScheme.surface,
+    color: Color = MaterialTheme.colorScheme.onSurface,
     onClick: () -> Unit
 ) {
-
     Surface(
         shape = CircleShape,
         border = border,
@@ -352,7 +330,6 @@ fun PlayerIconItem(
             },
         contentColor = color,
         color = backgroundColor
-
     ) {
         Box(
             modifier = Modifier.padding(4.dp),
@@ -362,13 +339,8 @@ fun PlayerIconItem(
                 imageVector = icon,
                 contentDescription = null,
             )
-
         }
-
-
     }
-
-
 }
 
 
@@ -382,7 +354,6 @@ fun BottomBarPrev() {
             audio = dummyAudioList[0],
             isAudioPlaying = true,
             onStart = { /*TODO*/ }) {
-
         }
     }
 
@@ -401,8 +372,6 @@ fun HomeScreenPrev() {
             onStart = {},
             onItemClick = {}
         ) {
-
         }
     }
-
 }

@@ -9,12 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -43,25 +41,17 @@ class MainActivity : ComponentActivity() {
                         if (event == Lifecycle.Event.ON_RESUME) {
                             permissionState.launchPermissionRequest()
                         }
-
                     }
                     lifecycleOwner.lifecycle.addObserver(observer)
-
-
                     onDispose {
                         lifecycleOwner.lifecycle.removeObserver(observer)
                     }
-
                 }
-
-
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     if (permissionState.hasPermission) {
-
                         val audioViewModel = viewModel(
                             modelClass = AudioViewModel::class.java
                         )
@@ -85,8 +75,6 @@ class MainActivity : ComponentActivity() {
                                 audioViewModel.skipToNext()
                             }
                         )
-
-
                     } else {
                         Box(contentAlignment = Alignment.Center) {
                             Text(text = "Grant permission first to use this app")
@@ -95,21 +83,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MusicPlayerTheme {
-        Greeting("Android")
     }
 }
